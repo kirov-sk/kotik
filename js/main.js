@@ -89,8 +89,29 @@
       headerPage.classList.remove('is-active');
     }
   });
+
 })();
-/* header end */
+ /* header end */
+
+ /*menu start*/
+ ;(function() {
+  let isMobile = {
+  Android: function() {return navigator.userAgent.match(/Android/i);},
+  BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
+  iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);},
+  Opera: function() {return navigator.userAgent.match(/Opera Mini/i);},
+  Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
+  any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
+};
+
+ if(isMobile.any()){
+  myLib.body.classList.add('mobile');
+  
+return;
+  }
+  myLib.body.classList.add('desktop');
+  })();
+ /*menu end*/
 
 /* popup start */
 ;(function() {
@@ -156,7 +177,11 @@
     var scrollTop = window.pageYOffset;
     var targetOffsetTop = targetTop + scrollTop;
     var headerOffset = document.querySelector('.header-page').clientHeight;
-    window.scrollTo(0, targetOffsetTop - headerOffset);
+    var hh = targetOffsetTop - headerOffset;
+   // window.scrollTo(0, targetOffsetTop - headerOffset);
+  // jQuery(window).animate({scrollTop: 0}, 2500); 
+     //jQuery(window).delay(5000).scrollTop(hh);
+     jQuery( 'html' ).animate({scrollTop: hh}, 500)
   }
 
   myLib.body.addEventListener('click', function(e) {
@@ -166,12 +191,20 @@
     if (scrollToItemClass === null) {
       return;
     }
+       if (scrollToItemClass === '_logo') {
+      jQuery( 'html' ).animate({scrollTop: 0}, 500);
+       return;
+    }
+
 
     e.preventDefault();
     var scrollToItem = document.querySelector('.' + scrollToItemClass);
 
     if (scrollToItem) {
+    
+
       scroll(scrollToItem);
+    
     }
   });
 })();
