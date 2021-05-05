@@ -740,6 +740,7 @@ img {
 }
 
 .product__title {
+  text-align: center;
   margin: 0 0 10px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
