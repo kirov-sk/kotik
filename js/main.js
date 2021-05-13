@@ -95,6 +95,7 @@
 
  /*menu start*/
  ;(function() {
+
   let isMobile = {
   Android: function() {return navigator.userAgent.match(/Android/i);},
   BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
@@ -106,7 +107,18 @@
 
  if(isMobile.any()){
   myLib.body.classList.add('mobile');
-  
+      let arrow=document.querySelectorAll('.arrow');
+  for(i=0; i<arrow.length; i++){
+      let thisLink=arrow[i].previousElementSibling;
+      let subMenu=arrow[i].nextElementSibling;
+      let thisArrow=arrow[i];
+
+      thisLink.classList.add('parent');
+    arrow[i].addEventListener('click', function(){
+      subMenu.classList.toggle('open');
+      thisArrow.classList.toggle('active');
+    });
+  }
 return;
   }
   myLib.body.classList.add('desktop');
@@ -337,8 +349,8 @@ return;
   
     ymaps.ready(function () {
       var myMap = new ymaps.Map('ymap', {
-              center: [53.917559, 27.585313],
-              zoom: 16
+              center: [53.902284, 27.561831],
+              zoom: 8
           }, {
               searchControlProvider: 'yandex#search'
           }),
@@ -349,7 +361,7 @@ return;
               iconLayout: 'default#image',
               // iconImageHref: '../img/common/marker.png',
               iconImageSize: [40, 50.2],
-              iconImageOffset: [-50, -38]
+              iconImageOffset: [-10, -50]
           });
   
       myMap.geoObjects.add(myPlacemark);
@@ -375,9 +387,10 @@ return;
       window.removeEventListener('scroll', checkYmapInit);
     }
   };
-
+if (document.querySelector('#ymap')) {
   window.addEventListener('scroll', checkYmapInit);
   checkYmapInit();
+}
 })();
 /* map end */
 
