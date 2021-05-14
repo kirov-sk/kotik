@@ -809,7 +809,7 @@ img {
 
 @media (max-width: 1200px) {
   .product__img {
-    height: 220px;
+/*     height: 220px; */
   }
 }
 
