@@ -1465,7 +1465,8 @@ img {
   opacity: 0;
   visibility: hidden;
   transform: translateY(350px);
-  transition: all 1.8s, ease 2.2s;
+  overflow: hidden;
+  transition: all 2.8s, ease 4.2s;
 }
 
 .popup.is-active {
@@ -1473,6 +1474,7 @@ img {
   opacity: 1;
   visibility: visible;
   transform: translateY(0px);
+
 }
 
 .popup__wrapper {
