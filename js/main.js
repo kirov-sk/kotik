@@ -462,3 +462,36 @@ if (document.querySelector('#ymap')) {
 
 })();
 /* form end */
+
+/* popup info start */
+;(function() {
+
+ document.querySelector('.popup-thanks').classList.add('is-active');
+ myLib.toggleScroll();
+  
+  // myLib.body.addEventListener('click', function(e) {
+  //   var target = e.target;
+
+  //   if (target.classList.contains('popup-close') ||
+  //       target.classList.contains('popup__inner')) {
+  //         var popup = myLib.closestItemByClass(target, 'popup');
+
+  //         closePopup(popup);
+  //         myLib.toggleScroll();
+  //   }
+  // });
+
+  // myLib.body.addEventListener('keydown', function(e) {
+  //   if (e.keyCode !== 27) {
+  //     return;
+  //   }
+
+  //   var popup = document.querySelector('.popup.is-active');
+
+  //   if (popup) {
+  //     closePopup(popup);
+  //     myLib.toggleScroll();
+  //   }
+  // });
+})();
+/* popup info end */
