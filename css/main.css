@@ -730,12 +730,17 @@ img {
   flex-direction: column;
   height: 100%;
 }
+.catalog__item .product picture
+{
+  width: 340px;
+  height: 310px;
+  overflow: hidden;
+}
 
 .product__img {
   display: block;
   margin: 0 auto 15px;
-  width: 340px;
-  height: 280px;
+ 
   background: url(../img/section-top/loading.gif) center/20px no-repeat;
 }
 
