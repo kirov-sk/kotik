@@ -466,8 +466,10 @@ if (document.querySelector('#ymap')) {
 /* popup info start */
 ;(function() {
 
- document.querySelector('.popup-thanks').classList.add('is-active');
- myLib.toggleScroll();
+ const popup_thanks =document.querySelector('.popup-thanks');
+ if (popup_thanks) {
+ popup_thanks.classList.add('is-active');
+ myLib.toggleScroll();}
   
   // myLib.body.addEventListener('click', function(e) {
   //   var target = e.target;
