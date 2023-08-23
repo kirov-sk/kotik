@@ -495,5 +495,31 @@ if (document.querySelector('#ymap')) {
   //     myLib.toggleScroll();
   //   }
   // });
+      //анимационный эффект печатающей машинки
+async function typeWriter(element, text1, speed) {
+  if(element === null){ return}
+  var i = 0;
+  var n = 0;
+  var speed1 = speed || 100;
+  let text = element.innerHTML ?? text1;
+  element.innerHTML="-";
+  function type1() {
+
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type1, speed1);
+    } else {
+      n++;
+      i=0;
+      setTimeout(()=>{element.innerHTML = "-";type1();}, 5000);
+        //element.innerHTML = "-";
+    }
+  }
+  type1();
+}
+
+var element1 = document.getElementById("run-string");
+typeWriter(element1,'',300);
 })();
 /* popup info end */
