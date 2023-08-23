@@ -512,7 +512,7 @@ async function typeWriter(element, text1, speed) {
     } else {
       n++;
       i=0;
-      setTimeout(()=>{element.innerHTML = "-";type1();}, 5000);
+      setTimeout(()=>{element.innerHTML = " ";type1();}, 5000);
         //element.innerHTML = " ";
     }
   }
