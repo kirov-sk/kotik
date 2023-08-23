@@ -502,7 +502,7 @@ async function typeWriter(element, text1, speed) {
   var n = 0;
   var speed1 = speed || 100;
   let text = element.innerHTML ?? text1;
-  element.innerHTML="-";
+  element.innerHTML=" ";
   function type1() {
 
     if (i < text.length) {
@@ -513,12 +513,13 @@ async function typeWriter(element, text1, speed) {
       n++;
       i=0;
       setTimeout(()=>{element.innerHTML = "-";type1();}, 5000);
-        //element.innerHTML = "-";
+        //element.innerHTML = " ";
     }
   }
   type1();
 }
-
+var velcome = document.getElementById("velcome");
+typeWriter(velcome,'',300);
 var element1 = document.getElementById("run-string");
 typeWriter(element1,'',300);
 })();
